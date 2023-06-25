@@ -2,7 +2,7 @@
 
 This repository contains the implementation of a panorama - image stitching from two input images: a left image and a right image.
 
-## Workflow Overview
+## Overview
 
 1. **Key Point Identification**: The project starts with the identification of key points in both images using a technique called SIFT (Scale-Invariant Feature Transform).
 
