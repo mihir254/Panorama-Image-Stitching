@@ -1,4 +1,17 @@
-# Computer Vision Image Stitching
- 
-Stitched left and right images together to create a panorama image. Made use of SIFT point detector in order to find key points and descriptors on both the given images. Using KNN, calculated the best matching pixels with the help of 2-norm distances between every key point in the left image to every other key point in the right image. To find the best matches, I made use of ratio testing with threshold = 0.7. Got a list of all the in-liners using the RANSAC algorithm, which in turn helped in the calculation of the estimated homography matrix. Used perspective transformation, and warped the left image into the right image and aligned the warped image. Then stitched the image to create a perfect panorama image.
-Made use of the openCV library for basic keypoint extraction and implemented all the other algorithms from scratch.
+# Panorama - Image Stitching
+
+This repository contains the implementation of a panorama - image stitching from two input images: a left image and a right image.
+
+## Workflow Overview
+
+1. **Key Point Identification**: The project starts with the identification of key points in both images using a technique called SIFT (Scale-Invariant Feature Transform).
+
+2. **Key Point Matching**: Each key point from the left image is compared with those in the right image using a method called KNN (K-Nearest Neighbors). The best matches are then filtered using a ratio test.
+
+3. **Match Refinement**: The matches are further refined using a process called RANSAC (Random Sample Consensus) to discard potential errors or outliers.
+
+4. **Transformation Matrix Computation**: Using these refined matches, a transformation matrix is computed, which provides the alignment details for the left image with respect to the right image.
+
+5. **Image Warping and Stitching**: The left image is then warped based on the transformation matrix, aligned with the right image, and stitched together to create the final panoramic image.
+
+This project makes use of the OpenCV library for initial key point detection, with the rest of the algorithms developed from scratch.
